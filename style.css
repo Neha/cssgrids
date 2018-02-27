@@ -10,27 +10,27 @@ body{
     border-top:2px solid #eee;
 }
 
-header{
+.sampleOne header{
     height: 70px;
     text-align:center;
     padding:30px 0;
 }
 
-header h1{
+.sampleOne header h1{
     text-transform: uppercase;
     margin-bottom: 15px;
 }
 
-header h2{
+.sampleOne header h2{
     color:#ccc;
    
 }
  
-h2 span{
+.sampleOne h2 span{
     color: red;
 }
 
-.wrapper{
+.sampleOne .wrapper{
   
     display: grid;
     width:80%;
@@ -44,7 +44,7 @@ h2 span{
    
 }
 
-.wrapper div{
+.sampleOne .wrapper div{
     background:#fff;
     border:1px solid #eee;
     box-shadow:2px 2px 2px #ccc;
@@ -55,7 +55,7 @@ h2 span{
     display: flex;
 }
 
-footer{
+.sampleOne footer{
     margin-top:30px;
     width:80%;
     margin:0 auto;
@@ -63,7 +63,7 @@ footer{
     text-align:center;
 }
 
-footer a{
+.sampleOne footer a{
     color: #999;
     font-size:12px;
     margin-right:10px;
@@ -71,17 +71,167 @@ footer a{
     
     
 }
-footer p{
+.sampleOne footer p{
     font-size:11px;
     margin-top:10px;
-    
-    
 }
 
-div p{
+.sampleOne div p{
     width:80%;
     line-height: 21px;
     font-size:12px;
     text-align: center;
-    
+}
+
+
+.homeLayout{
+    display:grid;
+    background: #eee;
+    width: 80%;
+    justify-content: center;
+    grid-template-areas: 
+    "header header header"
+    "contentWrapper  contentWrapper  contentWrapper"
+    "news news news"
+    "footer footer footer";
+    grid-gap:10px;
+    justify-content: stretch;
+    margin:10px auto;
+    border:1px dotted #ccc;
+}
+
+
+.layout{
+   display:grid;
+   background: #eee;
+   width: 80%;
+   justify-content: center;
+   grid-template-areas: 
+    "header header header"
+    "news news news"
+    "nav  contentWrapper  contentWrapper"
+    "quotes quotes quotes"
+    "footer footer footer";
+    grid-gap:10px;
+    justify-content: stretch;
+    margin:10px auto;
+    border:1px dotted #ccc;
+}
+
+.layout header, .homeLayout header{
+    grid-area: header;
+    align-content: center;
+    height:140px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom:1px solid #ccc;
+   
+   
+}
+
+header span{
+    color: red;
+}
+
+.layout footer, .homeLayout footer{
+    grid-area: footer;
+    align-content: center;
+    min-height:50px;
+    background: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top:1px solid #ccc;
+    padding:10px;
+}
+
+.layout .navigation{
+    grid-area: nav;
+}
+
+.navigation ul{
+    margin:10px;
+    list-style: none;
+}
+.navigation ul li{
+    margin-top:10px;
+}
+
+.navigation ul li a{
+    color: #000;
+    text-decoration:none;
+    font-weight: bold;
+}
+
+.layout .news,.homeLayout .news{
+    grid-area: news;
+    display: flex;
+    grid-auto-flow: row;
+    padding:10px;
+    justify-content: center;
+    align-content: center;
+    background: #eee;
+}
+
+.news div {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    line-height: 21px;
+    background: rgb(209, 209, 209);
+    margin: 0 10px;
+    border-radius: 10px;
+    padding: 20px;
+   
+}
+
+.homeLayout .news div a{
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homeLayout .news div:hover{
+    background:#999;
+}
+
+.news div h4{
+    font-size:16px;
+}
+
+.layout .quotes{
+    grid-area: quotes;
+}
+.layout .contentWrapper {
+    min-height: 280px;
+}
+
+.layout .contentWrapper,.homeLayout .contentWrapper{
+    grid-area: contentWrapper;
+   
+}
+
+.contentWrapper p{
+    font-size:12px;
+    line-height: 21px;
+    width:80%;
+    margin:0 auto;
+
+}
+
+.homeLayout .contentWrapper p{
+    text-align: center;
+}
+
+.layout footer a,.homeLayout footer a{
+    color:#999;
+    text-decoration: none;
 }
