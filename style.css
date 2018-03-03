@@ -44,6 +44,8 @@ body{
    
 }
 
+
+
 .sampleOne .wrapper div{
     background:#fff;
     border:1px solid #eee;
@@ -121,6 +123,8 @@ footer a{
     margin:10px auto;
     border:1px dotted #ccc;
 }
+
+
 
 .layout header, .homeLayout header{
     grid-area: header;
@@ -265,4 +269,31 @@ header span{
 .sampleThree .contentWrapper div:nth-child(3){
    
     grid-column: 1/3;
+}
+
+/*Responsive*/
+@media only screen and (max-width: 500px) {
+    body {
+        background-color: rgb(177, 247, 177);
+    }
+    .layout.responsive{
+        grid-template-areas: 
+        "header"
+        "news"
+        "nav"
+        "contentWrapper"
+        "footer"
+    }
+
+
+.layout.responsive .news {
+    display: grid;
+    grid-gap: 10px;
+ }
+ 
+ .layout.responsive .news div {
+    width: auto;
+    
+ }
+ 
 }
